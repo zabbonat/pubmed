@@ -14,7 +14,7 @@ import time
 lista=[]
 for i in tqdm(range(len(b))):
     string=','.join([str(item) for item in b[i]])
-    req=requests.get('https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id='+string+'&retmode=xml&api_key=9e46fd369b5d9d7448103ed7d418cc319a08')
+    req=requests.get('https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id='+string+'&retmode=xml&api_key=YOURAPIKEY')
     soup=BeautifulSoup(req.content, 'lxml')
     for k in range(len(soup.findAll('pubmedarticle'))):
         pmid=np.nan
